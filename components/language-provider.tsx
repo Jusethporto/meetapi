@@ -22,8 +22,8 @@ const translations = {
     'nav.getStarted': 'Get Started',
     
     // Hero
-    'hero.title': 'Transform Your Business with Intelligent Web Solutions',
-    'hero.subtitle': 'We specialize in creating cutting-edge websites, powerful automations, and strategic digital solutions that drive real business growth.',
+    'hero.title': 'We Build Websites That Actually Generate Clients',
+    'hero.subtitle': 'We help businesses increase sales with high-performance websites, smart automations, and scalable digital systems.',
     'hero.cta': 'Start Your Project',
     'hero.learnMore': 'Learn More',
     
