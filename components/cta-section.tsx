@@ -18,9 +18,11 @@ export function CTASection() {
               {t('cta.subtitle')}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" variant="secondary" className="h-12 px-8 text-base bg-background text-foreground hover:bg-background/90">
-                {t('cta.button')}
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" variant="secondary" className="h-12 px-8 text-base bg-background text-foreground hover:bg-background/90" asChild>
+                <a href="https://wa.me/573135714785" target="_blank" rel="noopener noreferrer">
+                  {t('cta.button')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
