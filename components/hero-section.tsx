@@ -24,8 +24,10 @@ export function HeroSection() {
           <RevealOnScroll variant="fade-up" delay={300} threshold={0.1}>
             <div className="mt-10 flex items-center justify-center gap-x-6 flex-wrap gap-y-4">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-12 px-8 text-base">
-                {t('hero.cta')}
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <a href="https://wa.me/573135714785" target="_blank" rel="noopener noreferrer">
+                  {t('hero.cta')}
+                  <span className="ml-2 h-5 w-5" />
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent">
                 {t('hero.learnMore')}
