@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card'
 import { useLanguage } from '@/components/language-provider'
+import { RevealOnScroll } from '@/components/reveal-on-scroll'
 import { Code2, Database, LineChart, Lock, Smartphone, Cloud } from 'lucide-react'
 
 const solutionKeys = [
@@ -19,31 +20,35 @@ export function SolutionsSection() {
   return (
     <section id="solutions" className="py-20 sm:py-32 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            {t('solutions.title')}
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground text-pretty">
-            {t('solutions.subtitle')}
-          </p>
-        </div>
+        <RevealOnScroll variant="fade-up">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+              {t('solutions.title')}
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-muted-foreground text-pretty">
+              {t('solutions.subtitle')}
+            </p>
+          </div>
+        </RevealOnScroll>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
-          {solutionKeys.map((solution) => (
-            <Card key={solution.titleKey} className="bg-card border-border group hover:border-accent transition-colors">
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                    <solution.icon className="h-6 w-6 text-accent" />
+          {solutionKeys.map((solution, index) => (
+            <RevealOnScroll key={solution.titleKey} variant="fade-up" delay={index * 100}>
+              <Card className="bg-card border-border group hover:border-accent transition-colors h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                      <solution.icon className="h-6 w-6 text-accent" />
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-foreground">{solution.metric}</div>
+                      <div className="text-xs text-muted-foreground">{solution.metricLabel}</div>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-foreground">{solution.metric}</div>
-                    <div className="text-xs text-muted-foreground">{solution.metricLabel}</div>
-                  </div>
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">{t(solution.titleKey)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(solution.descKey)}</p>
-              </CardContent>
-            </Card>
+                  <h3 className="mt-4 text-lg font-semibold text-foreground">{t(solution.titleKey)}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(solution.descKey)}</p>
+                </CardContent>
+              </Card>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

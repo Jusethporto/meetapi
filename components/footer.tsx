@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/components/language-provider'
+import { RevealOnScroll } from '@/components/reveal-on-scroll'
 import { Github, Linkedin, Twitter } from 'lucide-react'
 
 const navigation = {
@@ -47,6 +48,7 @@ export function Footer() {
   return (
     <footer id="contact" className="bg-secondary/30 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <RevealOnScroll variant="fade-up">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-4">
             <span className="text-2xl font-bold text-foreground">
@@ -116,6 +118,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Meetapi. {t('footer.rights')}
           </p>
         </div>
+        </RevealOnScroll>
       </div>
     </footer>
   )
